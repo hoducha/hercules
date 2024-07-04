@@ -256,6 +256,7 @@ func TestCommitsSerialize(t *testing.T) {
 	assert.Nil(t, err)
 	assert.Equal(t, `  commits:
     - hash: cce947b98a050c6d356bc6ba95030254914027b1
+      message: ""
       when: 1481563829
       author: 0
       files:
@@ -266,6 +267,7 @@ func TestCommitsSerialize(t *testing.T) {
          language: Go
          stat: [628, 67, 9]
     - hash: c29112dbd697ad9b401333b80c18a63951bc18d9
+      message: ""
       when: 1481563999
       author: 1
       files:

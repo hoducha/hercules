@@ -45,10 +45,11 @@ type FileStat struct {
 
 // CommitStat is the statistics for a commit
 type CommitStat struct {
-	Hash   string
-	When   int64
-	Author int
-	Files  []FileStat
+	Hash    string
+	Message string
+	When    int64
+	Author  int
+	Files   []FileStat
 }
 
 // Name of this PipelineItem. Uniquely identifies the type, used for mapping keys, etc.
@@ -118,9 +119,10 @@ func (ca *CommitsAnalysis) Consume(deps map[string]interface{}) (map[string]inte
 	lineStats := deps[items.DependencyLineStats].(map[object.ChangeEntry]items.LineStats)
 	langs := deps[items.DependencyLanguages].(map[plumbing.Hash]string)
 	cs := CommitStat{
-		Hash:   commit.Hash.String(),
-		When:   commit.Author.When.Unix(),
-		Author: author,
+		Hash:    commit.Hash.String(),
+		Message: commit.Message,
+		When:    commit.Author.When.Unix(),
+		Author:  author,
 	}
 	for entry, stats := range lineStats {
 		cs.Files = append(cs.Files, FileStat{
@@ -161,6 +163,7 @@ func (ca *CommitsAnalysis) serializeText(result *CommitsResult, writer io.Writer
 	fmt.Fprintln(writer, "  commits:")
 	for _, c := range result.Commits {
 		fmt.Fprintf(writer, "    - hash: %s\n", c.Hash)
+		fmt.Fprintf(writer, "      message: %s\n", yaml.SafeString(c.Message))
 		fmt.Fprintf(writer, "      when: %d\n", c.When)
 		fmt.Fprintf(writer, "      author: %d\n", c.Author)
 		fmt.Fprintf(writer, "      files:\n")
@@ -196,6 +199,7 @@ func (ca *CommitsAnalysis) serializeBinary(result *CommitsResult, writer io.Writ
 
 		message.Commits[i] = &pb.Commit{
 			Hash:         c.Hash,
+			Message:      c.Message,
 			WhenUnixTime: c.When,
 			Author:       int32(c.Author),
 			Files:        files,

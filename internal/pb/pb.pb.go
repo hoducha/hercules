@@ -1229,9 +1229,10 @@ func (m *CommitFile) GetStats() *LineStats {
 
 type Commit struct {
 	Hash                 string        `protobuf:"bytes,1,opt,name=hash,proto3" json:"hash,omitempty"`
-	WhenUnixTime         int64         `protobuf:"varint,2,opt,name=when_unix_time,json=whenUnixTime,proto3" json:"when_unix_time,omitempty"`
-	Author               int32         `protobuf:"varint,3,opt,name=author,proto3" json:"author,omitempty"`
-	Files                []*CommitFile `protobuf:"bytes,4,rep,name=files,proto3" json:"files,omitempty"`
+	Message              string        `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
+	WhenUnixTime         int64         `protobuf:"varint,3,opt,name=when_unix_time,json=whenUnixTime,proto3" json:"when_unix_time,omitempty"`
+	Author               int32         `protobuf:"varint,4,opt,name=author,proto3" json:"author,omitempty"`
+	Files                []*CommitFile `protobuf:"bytes,5,rep,name=files,proto3" json:"files,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}      `json:"-"`
 	XXX_unrecognized     []byte        `json:"-"`
 	XXX_sizecache        int32         `json:"-"`
@@ -1264,6 +1265,13 @@ var xxx_messageInfo_Commit proto.InternalMessageInfo
 func (m *Commit) GetHash() string {
 	if m != nil {
 		return m.Hash
+	}
+	return ""
+}
+
+func (m *Commit) GetMessage() string {
+	if m != nil {
+		return m.Message
 	}
 	return ""
 }
