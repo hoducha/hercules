@@ -1,4 +1,4 @@
-module gopkg.in/src-d/hercules.v10
+module github.com/hoducha/hercules
 
 go 1.12
 
