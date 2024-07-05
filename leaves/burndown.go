@@ -14,18 +14,18 @@ import (
 	"unicode/utf8"
 
 	"github.com/gogo/protobuf/proto"
+	"github.com/hoducha/hercules/internal/burndown"
+	"github.com/hoducha/hercules/internal/core"
+	"github.com/hoducha/hercules/internal/pb"
+	items "github.com/hoducha/hercules/internal/plumbing"
+	"github.com/hoducha/hercules/internal/plumbing/identity"
+	"github.com/hoducha/hercules/internal/rbtree"
+	"github.com/hoducha/hercules/internal/yaml"
 	"github.com/sergi/go-diff/diffmatchpatch"
 	"gopkg.in/src-d/go-git.v4"
 	"gopkg.in/src-d/go-git.v4/plumbing"
 	"gopkg.in/src-d/go-git.v4/plumbing/object"
 	"gopkg.in/src-d/go-git.v4/utils/merkletrie"
-	"gopkg.in/src-d/hercules.v10/internal/burndown"
-	"gopkg.in/src-d/hercules.v10/internal/core"
-	"gopkg.in/src-d/hercules.v10/internal/pb"
-	items "gopkg.in/src-d/hercules.v10/internal/plumbing"
-	"gopkg.in/src-d/hercules.v10/internal/plumbing/identity"
-	"gopkg.in/src-d/hercules.v10/internal/rbtree"
-	"gopkg.in/src-d/hercules.v10/internal/yaml"
 )
 
 // BurndownAnalysis allows to gather the line burndown statistics for a Git repository.
@@ -181,7 +181,8 @@ const (
 type sparseHistory = map[int]map[int]int64
 
 // DenseHistory is the matrix [number of samples][number of bands] -> number of lines.
-//                                    y                  x
+//
+//	y                  x
 type DenseHistory = [][]int64
 
 // Name of this PipelineItem. Uniquely identifies the type, used for mapping keys, etc.

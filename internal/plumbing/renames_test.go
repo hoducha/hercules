@@ -10,11 +10,11 @@ import (
 	"testing"
 	"time"
 
+	"github.com/hoducha/hercules/internal/core"
+	"github.com/hoducha/hercules/internal/test"
 	"github.com/stretchr/testify/assert"
 	"gopkg.in/src-d/go-git.v4/plumbing"
 	"gopkg.in/src-d/go-git.v4/plumbing/object"
-	"gopkg.in/src-d/hercules.v10/internal/core"
-	"gopkg.in/src-d/hercules.v10/internal/test"
 )
 
 func fixtureRenameAnalysis() *RenameAnalysis {

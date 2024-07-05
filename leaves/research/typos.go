@@ -7,18 +7,18 @@ import (
 	"unicode/utf8"
 
 	"github.com/gogo/protobuf/proto"
+	"github.com/hoducha/hercules/internal/core"
+	"github.com/hoducha/hercules/internal/levenshtein"
+	"github.com/hoducha/hercules/internal/pb"
+	items "github.com/hoducha/hercules/internal/plumbing"
+	uast_items "github.com/hoducha/hercules/internal/plumbing/uast"
+	"github.com/hoducha/hercules/internal/yaml"
 	"github.com/sergi/go-diff/diffmatchpatch"
 	"gopkg.in/bblfsh/sdk.v2/uast"
 	"gopkg.in/bblfsh/sdk.v2/uast/nodes"
 	"gopkg.in/src-d/go-git.v4"
 	"gopkg.in/src-d/go-git.v4/plumbing"
 	"gopkg.in/src-d/go-git.v4/plumbing/object"
-	"gopkg.in/src-d/hercules.v10/internal/core"
-	"gopkg.in/src-d/hercules.v10/internal/levenshtein"
-	"gopkg.in/src-d/hercules.v10/internal/pb"
-	items "gopkg.in/src-d/hercules.v10/internal/plumbing"
-	uast_items "gopkg.in/src-d/hercules.v10/internal/plumbing/uast"
-	"gopkg.in/src-d/hercules.v10/internal/yaml"
 )
 
 // TyposDatasetBuilder collects pairs of typo-fix in source code identifiers.

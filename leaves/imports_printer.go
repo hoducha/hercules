@@ -9,15 +9,15 @@ import (
 	"time"
 
 	"github.com/gogo/protobuf/proto"
+	"github.com/hoducha/hercules/internal/core"
+	"github.com/hoducha/hercules/internal/pb"
+	"github.com/hoducha/hercules/internal/plumbing"
+	"github.com/hoducha/hercules/internal/plumbing/identity"
+	"github.com/hoducha/hercules/internal/plumbing/imports"
+	"github.com/hoducha/hercules/internal/yaml"
 	imports2 "github.com/src-d/imports"
 	"gopkg.in/src-d/go-git.v4"
 	gitplumbing "gopkg.in/src-d/go-git.v4/plumbing"
-	"gopkg.in/src-d/hercules.v10/internal/core"
-	"gopkg.in/src-d/hercules.v10/internal/pb"
-	"gopkg.in/src-d/hercules.v10/internal/plumbing"
-	"gopkg.in/src-d/hercules.v10/internal/plumbing/identity"
-	"gopkg.in/src-d/hercules.v10/internal/plumbing/imports"
-	"gopkg.in/src-d/hercules.v10/internal/yaml"
 )
 
 // ImportsMap is the type of the mapping from dev indexes to languages to import names to ticks to

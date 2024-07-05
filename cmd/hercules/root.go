@@ -19,12 +19,14 @@ import (
 
 	"github.com/Masterminds/sprig"
 	"github.com/gogo/protobuf/proto"
+	"github.com/hoducha/hercules"
+	"github.com/hoducha/hercules/internal/pb"
 	"github.com/mitchellh/go-homedir"
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
 	"golang.org/x/crypto/ssh/terminal"
 	progress "gopkg.in/cheggaaa/pb.v1"
-	"gopkg.in/src-d/go-billy-siva.v4"
+	sivafs "gopkg.in/src-d/go-billy-siva.v4"
 	"gopkg.in/src-d/go-billy.v4/memfs"
 	"gopkg.in/src-d/go-billy.v4/osfs"
 	"gopkg.in/src-d/go-git.v4"
@@ -34,8 +36,6 @@ import (
 	"gopkg.in/src-d/go-git.v4/storage"
 	"gopkg.in/src-d/go-git.v4/storage/filesystem"
 	"gopkg.in/src-d/go-git.v4/storage/memory"
-	"gopkg.in/src-d/hercules.v10"
-	"gopkg.in/src-d/hercules.v10/internal/pb"
 )
 
 // oneLineWriter splits the output data by lines and outputs one on top of another using '\r'.

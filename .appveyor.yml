@@ -22,7 +22,7 @@ build_script:
   - 7z a hercules.win64.zip hercules.exe "libgcc_s_seh-1.dll" "libstdc++-6.dll" "libwinpthread-1.dll"
 
 test_script:
-  - go test -v -timeout 20m -race -tags disable_babelfish gopkg.in/src-d/hercules.v10/...
+  - go test -v -timeout 20m -race -tags disable_babelfish github.com/hoducha/hercules/...
 
 artifacts:
   - name: hercules.win64.zip

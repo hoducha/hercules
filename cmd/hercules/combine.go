@@ -12,10 +12,10 @@ import (
 	"strings"
 
 	"github.com/gogo/protobuf/proto"
+	"github.com/hoducha/hercules"
+	"github.com/hoducha/hercules/internal/pb"
 	"github.com/spf13/cobra"
 	progress "gopkg.in/cheggaaa/pb.v1"
-	"gopkg.in/src-d/hercules.v10"
-	"gopkg.in/src-d/hercules.v10/internal/pb"
 )
 
 // combineCmd represents the combine command

@@ -9,14 +9,14 @@ import (
 	"testing"
 
 	"github.com/gogo/protobuf/proto"
+	"github.com/hoducha/hercules/internal/core"
+	"github.com/hoducha/hercules/internal/pb"
+	"github.com/hoducha/hercules/internal/plumbing"
+	"github.com/hoducha/hercules/internal/plumbing/identity"
+	"github.com/hoducha/hercules/internal/test"
 	"github.com/stretchr/testify/assert"
 	gitplumbing "gopkg.in/src-d/go-git.v4/plumbing"
 	"gopkg.in/src-d/go-git.v4/plumbing/object"
-	"gopkg.in/src-d/hercules.v10/internal/core"
-	"gopkg.in/src-d/hercules.v10/internal/pb"
-	"gopkg.in/src-d/hercules.v10/internal/plumbing"
-	"gopkg.in/src-d/hercules.v10/internal/plumbing/identity"
-	"gopkg.in/src-d/hercules.v10/internal/test"
 )
 
 func fixtureCouples() *CouplesAnalysis {

@@ -15,6 +15,9 @@ import (
 
 	"github.com/Jeffail/tunny"
 	"github.com/gogo/protobuf/proto"
+	"github.com/hoducha/hercules/internal/core"
+	"github.com/hoducha/hercules/internal/pb"
+	items "github.com/hoducha/hercules/internal/plumbing"
 	bblfsh "gopkg.in/bblfsh/client-go.v3"
 	"gopkg.in/bblfsh/sdk.v2/uast/nodes"
 	"gopkg.in/bblfsh/sdk.v2/uast/nodes/nodesproto"
@@ -22,9 +25,6 @@ import (
 	"gopkg.in/src-d/go-git.v4/plumbing"
 	"gopkg.in/src-d/go-git.v4/plumbing/object"
 	"gopkg.in/src-d/go-git.v4/utils/merkletrie"
-	"gopkg.in/src-d/hercules.v10/internal/core"
-	"gopkg.in/src-d/hercules.v10/internal/pb"
-	items "gopkg.in/src-d/hercules.v10/internal/plumbing"
 )
 
 // Extractor retrieves UASTs from Babelfish server which correspond to changed files in a commit.

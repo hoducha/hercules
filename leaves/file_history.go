@@ -7,14 +7,14 @@ import (
 	"strings"
 
 	"github.com/gogo/protobuf/proto"
+	"github.com/hoducha/hercules/internal/core"
+	"github.com/hoducha/hercules/internal/pb"
+	items "github.com/hoducha/hercules/internal/plumbing"
+	"github.com/hoducha/hercules/internal/plumbing/identity"
 	"gopkg.in/src-d/go-git.v4"
 	"gopkg.in/src-d/go-git.v4/plumbing"
 	"gopkg.in/src-d/go-git.v4/plumbing/object"
 	"gopkg.in/src-d/go-git.v4/utils/merkletrie"
-	"gopkg.in/src-d/hercules.v10/internal/core"
-	"gopkg.in/src-d/hercules.v10/internal/pb"
-	items "gopkg.in/src-d/hercules.v10/internal/plumbing"
-	"gopkg.in/src-d/hercules.v10/internal/plumbing/identity"
 )
 
 // FileHistoryAnalysis contains the intermediate state which is mutated by Consume(). It should implement

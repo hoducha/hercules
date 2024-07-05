@@ -1,16 +1,16 @@
 package hercules
 
 import (
+	"github.com/hoducha/hercules/internal/core"
+	"github.com/hoducha/hercules/internal/plumbing"
+	"github.com/hoducha/hercules/internal/plumbing/identity"
+	"github.com/hoducha/hercules/internal/plumbing/uast"
+	"github.com/hoducha/hercules/internal/yaml"
+	_ "github.com/hoducha/hercules/leaves"          // add burndown and other analyses
+	_ "github.com/hoducha/hercules/leaves/research" // add "research" analyses
 	"github.com/spf13/pflag"
 	"gopkg.in/src-d/go-git.v4"
 	"gopkg.in/src-d/go-git.v4/plumbing/object"
-	"gopkg.in/src-d/hercules.v10/internal/core"
-	"gopkg.in/src-d/hercules.v10/internal/plumbing"
-	"gopkg.in/src-d/hercules.v10/internal/plumbing/identity"
-	"gopkg.in/src-d/hercules.v10/internal/plumbing/uast"
-	"gopkg.in/src-d/hercules.v10/internal/yaml"
-	_ "gopkg.in/src-d/hercules.v10/leaves"          // add burndown and other analyses
-	_ "gopkg.in/src-d/hercules.v10/leaves/research" // add "research" analyses
 )
 
 // ConfigurationOptionType represents the possible types of a ConfigurationOption's value.

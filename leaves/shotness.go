@@ -7,6 +7,10 @@ import (
 	"unicode/utf8"
 
 	"github.com/gogo/protobuf/proto"
+	"github.com/hoducha/hercules/internal/core"
+	"github.com/hoducha/hercules/internal/pb"
+	items "github.com/hoducha/hercules/internal/plumbing"
+	uast_items "github.com/hoducha/hercules/internal/plumbing/uast"
 	"github.com/sergi/go-diff/diffmatchpatch"
 	"gopkg.in/bblfsh/client-go.v3/tools"
 	"gopkg.in/bblfsh/sdk.v2/uast"
@@ -14,10 +18,6 @@ import (
 	"gopkg.in/bblfsh/sdk.v2/uast/query"
 	"gopkg.in/src-d/go-git.v4"
 	"gopkg.in/src-d/go-git.v4/plumbing/object"
-	"gopkg.in/src-d/hercules.v10/internal/core"
-	"gopkg.in/src-d/hercules.v10/internal/pb"
-	items "gopkg.in/src-d/hercules.v10/internal/plumbing"
-	uast_items "gopkg.in/src-d/hercules.v10/internal/plumbing/uast"
 )
 
 // ShotnessAnalysis contains the intermediate state which is mutated by Consume(). It should implement
